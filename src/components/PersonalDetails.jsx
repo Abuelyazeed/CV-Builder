@@ -22,14 +22,50 @@ function PersonalDetails() {
           data-bs-parent="#accordionExample"
         >
           <div class="accordion-body">
-            <strong>This is the first item's accordion body.</strong> It is
-            shown by default, until the collapse plugin adds the appropriate
-            classes that we use to style each element. These classes control the
-            overall appearance, as well as the showing and hiding via CSS
-            transitions. You can modify any of this with custom CSS or
-            overriding our default variables. It's also worth noting that just
-            about any HTML can go within the <code>.accordion-body</code>,
-            though the transition does limit overflow.
+            <div class="mb-3">
+              <label for="fullName" class="form-label">
+                Full name
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="fullName"
+                placeholder="First and last name"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">
+                Email (recommended)
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="email"
+                placeholder="Enter email"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="phoneNumber" class="form-label">
+                Phone number (recommeded)
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="phoneNumber"
+                placeholder="Enter phone number"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="address" class="form-label">
+                Address (recommended)
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="address"
+                placeholder="City, Country"
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import React from "react";
 
 function PersonalDetails() {
   return (
-    <div class="accordion" id="accordionExample">
+    <div class="accordion mb-4" id="accordionExample">
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button

@@ -13,7 +13,7 @@ function PersonalDetails() {
             aria-expanded="true"
             aria-controls="collapseOne"
           >
-            Personal Details
+            <strong>Personal Details</strong>
           </button>
         </h2>
         <div

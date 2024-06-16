@@ -32,7 +32,7 @@ function Education() {
             aria-expanded="false"
             aria-controls="panelsStayOpen-collapseTwo"
           >
-            Education
+            <strong>Education</strong>
           </button>
         </h2>
         <div

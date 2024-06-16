@@ -1,7 +1,7 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 1rem;
 }
 
 body {
@@ -23,4 +23,48 @@ body {
   font: inherit;
   color: inherit;
   cursor: pointer;
+}
+
+.pers-section {
+  background-color: #0e374e;
+  color: white;
+  text-align: center;
+  padding-top: 2.2rem;
+  padding-bottom: 1.4rem;
+  width: 100%;
+}
+
+.resume-bottom {
+  background-color: white;
+  width: 100%;
+}
+
+.resume-bottom-title {
+  background-color: rgba(14, 55, 78, 0.07);
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0e374e;
+  border-radius: 0.3rem;
+  text-align: center;
+}
+
+.resume-bottom-details {
+  margin-top: 1.5rem;
+  line-height: 0.5rem;
+}
+
+.experience-left {
+  width: 65%;
+}
+
+.edu-section {
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+  width: 87%;
+}
+
+.experience-section {
+  width: 87%;
 }

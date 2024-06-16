@@ -15,7 +15,7 @@ function App() {
             <Education />
             <Experience />
           </div>
-          <div class="col-7">
+          <div class="col-7 mb-2">
             <Resume />
           </div>
         </div>

@@ -1,5 +1,4 @@
 #root {
-  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 2rem 1rem;
 }
@@ -52,7 +51,7 @@ body {
 
 .resume-bottom-details {
   margin-top: 1.5rem;
-  line-height: 0.5rem;
+  line-height: 1rem;
 }
 
 .experience-left {

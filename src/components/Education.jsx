@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import AddEducation from "./AddEducation";
 
 function Education() {
+  cont[(isActive, setIsActive)] = useState(false);
   const education = [
     {
       school: "Nefertari American Internation Schools",
@@ -58,6 +60,7 @@ function Education() {
                   </>
                 );
               })}
+            <AddEducation />
             <button type="button" class="btn btn-outline-primary mt-3 ed-btn">
               + Education
             </button>

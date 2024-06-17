@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
-function PersonalDetails() {
+function PersonalDetails({
+  fullName,
+  onChangeName,
+  email,
+  onChangeEmail,
+  phone,
+  onChangePhone,
+  address,
+  onChangeAddress,
+}) {
   return (
     <div class="accordion mb-4" id="accordionExample">
       <div class="accordion-item">
@@ -31,6 +40,8 @@ function PersonalDetails() {
                 class="form-control"
                 id="fullName"
                 placeholder="First and last name"
+                value={fullName}
+                onChange={(e) => onChangeName(e.target.value)}
               />
             </div>
             <div class="mb-3">
@@ -42,6 +53,8 @@ function PersonalDetails() {
                 class="form-control"
                 id="email"
                 placeholder="Enter email"
+                value={email}
+                onChange={(e) => onChangeEmail(e.target.value)}
               />
             </div>
             <div class="mb-3">
@@ -53,6 +66,8 @@ function PersonalDetails() {
                 class="form-control"
                 id="phoneNumber"
                 placeholder="Enter phone number"
+                value={phone}
+                onChange={(e) => onChangePhone(e.target.value)}
               />
             </div>
             <div class="mb-3">
@@ -64,6 +79,8 @@ function PersonalDetails() {
                 class="form-control"
                 id="address"
                 placeholder="City, Country"
+                value={address}
+                onChange={(e) => onChangeAddress(e.target.value)}
               />
             </div>
           </div>

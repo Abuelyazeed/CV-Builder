@@ -12,9 +12,9 @@ function App() {
   const [address, setAddress] = useState("Cairo, Egypt");
   return (
     <>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-5">
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-5">
             <PersonalDetails
               fullName={fullName}
               onChangeName={setFullName}
@@ -28,7 +28,7 @@ function App() {
             <Education />
             <Experience />
           </div>
-          <div class="col-7 mb-2">
+          <div className="col-7 mb-2">
             <Resume
               fullName={fullName}
               email={email}

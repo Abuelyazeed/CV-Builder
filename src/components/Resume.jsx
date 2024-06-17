@@ -8,15 +8,15 @@ function Resume({ fullName, email, phone, address }) {
         <h1 className="mb-3">{fullName}</h1>
         <div className="d-flex flex-row justify-content-evenly">
           <p>
-            <i class="bi bi-envelope me-2"></i>
+            <i className="bi bi-envelope me-2"></i>
             {email}
           </p>
           <p>
-            <i class="bi bi-telephone me-2"></i>
+            <i className="bi bi-telephone me-2"></i>
             {phone}
           </p>
           <p>
-            <i class="bi bi-geo-alt me-2"></i>
+            <i className="bi bi-geo-alt me-2"></i>
             {address}
           </p>
         </div>

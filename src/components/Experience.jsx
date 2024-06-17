@@ -22,11 +22,11 @@ function Experience() {
     },
   ];
   return (
-    <div class="accordion" id="accordionExample">
-      <div class="accordion-item">
-        <h2 class="accordion-header">
+    <div className="accordion" id="accordionExample">
+      <div className="accordion-item">
+        <h2 className="accordion-header">
           <button
-            class="accordion-button collapsed"
+            className="accordion-button collapsed"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#collapseThree"
@@ -38,10 +38,10 @@ function Experience() {
         </h2>
         <div
           id="collapseThree"
-          class="accordion-collapse collapse"
+          className="accordion-collapse collapse"
           data-bs-parent="#accordionExample"
         >
-          <div class="accordion-body d-flex flex-column">
+          <div className="accordion-body d-flex flex-column">
             {experience.length > 0 &&
               experience.map((ex, index) => {
                 return (
@@ -53,14 +53,17 @@ function Experience() {
                     >
                       {ex.companyName}
                       <button className="visible-btn">
-                        <i class="bi bi-eye"></i>
+                        <i className="bi bi-eye"></i>
                       </button>
                     </div>
                     <hr className="w-100 my-2" />
                   </>
                 );
               })}
-            <button type="button" class="btn btn-outline-primary mt-3 ed-btn">
+            <button
+              type="button"
+              className="btn btn-outline-primary mt-3 ed-btn"
+            >
               + Experience
             </button>
           </div>

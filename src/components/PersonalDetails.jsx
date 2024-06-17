@@ -11,11 +11,11 @@ function PersonalDetails({
   onChangeAddress,
 }) {
   return (
-    <div class="accordion mb-4" id="accordionExample">
-      <div class="accordion-item">
-        <h2 class="accordion-header">
+    <div className="accordion mb-4" id="accordionExample">
+      <div className="accordion-item">
+        <h2 className="accordion-header">
           <button
-            class="accordion-button"
+            className="accordion-button"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#collapseOne"
@@ -27,56 +27,56 @@ function PersonalDetails({
         </h2>
         <div
           id="collapseOne"
-          class="accordion-collapse collapse show"
+          className="accordion-collapse collapse show"
           data-bs-parent="#accordionExample"
         >
-          <div class="accordion-body">
-            <div class="mb-3">
-              <label for="fullName" class="form-label">
+          <div className="accordion-body">
+            <div className="mb-3">
+              <label htmlFor="fullName" className="form-label">
                 Full name
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="fullName"
                 placeholder="First and last name"
                 value={fullName}
                 onChange={(e) => onChangeName(e.target.value)}
               />
             </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">
                 Email (recommended)
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="email"
                 placeholder="Enter email"
                 value={email}
                 onChange={(e) => onChangeEmail(e.target.value)}
               />
             </div>
-            <div class="mb-3">
-              <label for="phoneNumber" class="form-label">
+            <div className="mb-3">
+              <label htmlFor="phoneNumber" className="form-label">
                 Phone number (recommeded)
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="phoneNumber"
                 placeholder="Enter phone number"
                 value={phone}
                 onChange={(e) => onChangePhone(e.target.value)}
               />
             </div>
-            <div class="mb-3">
-              <label for="address" class="form-label">
+            <div className="mb-3">
+              <label htmlFor="address" className="form-label">
                 Address (recommended)
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="address"
                 placeholder="City, Country"
                 value={address}

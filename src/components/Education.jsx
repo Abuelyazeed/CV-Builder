@@ -3,25 +3,12 @@ import "../App.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import AddEducation from "./AddEducation";
 
-function Education() {
-  const [isActive, setIsActive] = useState(false);
-  const education = [
-    {
-      school: "Nefertari American Internation Schools",
-      degree: "High School Degree",
-      startDate: "21/5/2000",
-      endDate: "22/5/2000",
-      location: "Cairo",
-    },
-    {
-      school: "German University In Cairo",
-      degree: "High School Degree",
-      startDate: "21/5/2000",
-      endDate: "22/5/2000",
-      location: "Cairo",
-    },
-  ];
-
+function Education({
+  educationList,
+  onChangeEducationList,
+  isActive,
+  onChangeIsActive,
+}) {
   return (
     <div className="accordion mb-4" id="accordionExample">
       <div className="accordion-item">
@@ -42,15 +29,16 @@ function Education() {
           className="accordion-collapse collapse"
         >
           <div className="accordion-body d-flex flex-column">
-            {education.length > 0 &&
-              education.map((ed, index) => {
+            {educationList.length > 0 &&
+              !isActive &&
+              educationList.map((ed, index) => {
                 return (
                   <>
                     {index === 0 && <hr className="w-100 my-2" />}
                     <div
                       key={index}
                       className="d-flex flex-row justify-content-between m-2 ed"
-                      onClick={() => setIsActive(true)}
+                      onClick={() => onChangeIsActive(true)}
                     >
                       {ed.school}
                       <button className="visible-btn">
@@ -61,10 +49,18 @@ function Education() {
                   </>
                 );
               })}
-            <AddEducation />
+            {isActive && (
+              <AddEducation
+                educationList={educationList}
+                onChangeEducationList={onChangeEducationList}
+                onChangeIsActive={onChangeIsActive}
+              />
+            )}
+
             <button
               type="button"
               className="btn btn-outline-primary mt-3 ed-btn"
+              onClick={() => onChangeIsActive(true)}
             >
               + Education
             </button>

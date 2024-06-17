@@ -1,23 +1,23 @@
 import React from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-function Resume({ fullName, email, phone, address }) {
+function Resume({ userInfo }) {
   return (
     <div>
       <section className="pers-section">
-        <h1 className="mb-3">{fullName}</h1>
+        <h1 className="mb-3">{userInfo.fullName}</h1>
         <div className="d-flex flex-row justify-content-evenly">
           <p>
             <i className="bi bi-envelope me-2"></i>
-            {email}
+            {userInfo.email}
           </p>
           <p>
             <i className="bi bi-telephone me-2"></i>
-            {phone}
+            {userInfo.phone}
           </p>
           <p>
             <i className="bi bi-geo-alt me-2"></i>
-            {address}
+            {userInfo.address}
           </p>
         </div>
       </section>

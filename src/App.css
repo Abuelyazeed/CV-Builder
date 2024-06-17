@@ -7,7 +7,9 @@ body {
   background-color: ghostwhite;
   font-family: "Rubik", sans-serif;
 }
-
+.ed:hover {
+  cursor: pointer;
+}
 .ed-btn {
   width: 7.8rem;
   display: block;

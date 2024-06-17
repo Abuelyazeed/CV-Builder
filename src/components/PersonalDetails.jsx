@@ -1,15 +1,10 @@
 import React, { useState } from "react";
 
-function PersonalDetails({
-  fullName,
-  onChangeName,
-  email,
-  onChangeEmail,
-  phone,
-  onChangePhone,
-  address,
-  onChangeAddress,
-}) {
+function PersonalDetails({ userInfo, onChangeUserInfo }) {
+  function handleChange(e) {
+    const { id, value } = e.target;
+    onChangeUserInfo({ ...userInfo, [id]: value });
+  }
   return (
     <div className="accordion mb-4" id="accordionExample">
       <div className="accordion-item">
@@ -40,8 +35,8 @@ function PersonalDetails({
                 className="form-control"
                 id="fullName"
                 placeholder="First and last name"
-                value={fullName}
-                onChange={(e) => onChangeName(e.target.value)}
+                value={userInfo.fullName}
+                onChange={handleChange}
               />
             </div>
             <div className="mb-3">
@@ -53,21 +48,21 @@ function PersonalDetails({
                 className="form-control"
                 id="email"
                 placeholder="Enter email"
-                value={email}
-                onChange={(e) => onChangeEmail(e.target.value)}
+                value={userInfo.email}
+                onChange={handleChange}
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="phoneNumber" className="form-label">
-                Phone number (recommeded)
+              <label htmlFor="phone" className="form-label">
+                Phone number (recommended)
               </label>
               <input
                 type="text"
                 className="form-control"
-                id="phoneNumber"
+                id="phone"
                 placeholder="Enter phone number"
-                value={phone}
-                onChange={(e) => onChangePhone(e.target.value)}
+                value={userInfo.phone}
+                onChange={handleChange}
               />
             </div>
             <div className="mb-3">
@@ -79,8 +74,8 @@ function PersonalDetails({
                 className="form-control"
                 id="address"
                 placeholder="City, Country"
-                value={address}
-                onChange={(e) => onChangeAddress(e.target.value)}
+                value={userInfo.address}
+                onChange={handleChange}
               />
             </div>
           </div>

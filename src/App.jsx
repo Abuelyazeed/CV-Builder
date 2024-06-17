@@ -6,35 +6,51 @@ import Experience from "./components/Experience";
 import Resume from "./components/Resume";
 
 function App() {
-  const [fullName, setFullName] = useState("Ahmed Abuelyazeed");
-  const [email, setEmail] = useState("abuelyazeed175@gmail.com");
-  const [phone, setPhone] = useState("01149920811");
-  const [address, setAddress] = useState("Cairo, Egypt");
+  const [userInfo, setUserInfo] = useState({
+    fullName: "Ahmed Abuelyazeed",
+    email: "abuelyazeed175@gmail.com",
+    phone: "01149920811",
+    address: "Cairo, Egypt",
+  });
+
+  const [isActive, setIsActive] = useState(false);
+
+  const [educationList, setEducationList] = useState([
+    {
+      school: "Nefertari American Internation Schools",
+      degree: "High School Degree",
+      startDate: "21/5/2000",
+      endDate: "22/5/2000",
+      location: "Cairo",
+    },
+    {
+      school: "German University In Cairo",
+      degree: "High School Degree",
+      startDate: "21/5/2000",
+      endDate: "22/5/2000",
+      location: "Cairo",
+    },
+  ]);
+
   return (
     <>
       <div className="container-fluid">
         <div className="row">
           <div className="col-5">
             <PersonalDetails
-              fullName={fullName}
-              onChangeName={setFullName}
-              email={email}
-              onChangeEmail={setEmail}
-              phone={phone}
-              onChangePhone={setPhone}
-              address={address}
-              onChangeAddress={setAddress}
+              userInfo={userInfo}
+              onChangeUserInfo={setUserInfo}
             />
-            <Education />
+            <Education
+              educationList={educationList}
+              onChangeEducationList={setEducationList}
+              isActive={isActive}
+              onChangeIsActive={setIsActive}
+            />
             <Experience />
           </div>
           <div className="col-7 mb-2">
-            <Resume
-              fullName={fullName}
-              email={email}
-              phone={phone}
-              address={address}
-            />
+            <Resume userInfo={userInfo} />
           </div>
         </div>
       </div>

@@ -30,6 +30,20 @@ function AddEditExperience({
     const { id, value } = e.target;
     setExperienceInfo({ ...experienceInfo, [id]: value });
   }
+
+  function handleAdd() {
+    if (selectedExperienceId) {
+      const updatedList = experienceList.map((ex) =>
+        ex.id === selectedExperienceId ? { ...ex, ...experienceInfo } : ex
+      );
+      onChangeExperienceList(updatedList);
+    } else {
+      const newExperience = { ...experienceInfo, id: Date.now() };
+      onChangeExperienceList([...experienceList, newExperience]);
+    }
+
+    onChangeIsActive(false);
+  }
   return <div>AddEditExperience</div>;
 }
 

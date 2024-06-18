@@ -18,7 +18,7 @@ function App() {
   const [educationList, setEducationList] = useState([
     {
       id: 1,
-      school: "Nefertari American Internation Schools",
+      school: "Nefertari American International Schools",
       degree: "High School Degree",
       startDate: "21/5/2000",
       endDate: "22/5/2000",
@@ -52,7 +52,7 @@ function App() {
             <Experience />
           </div>
           <div className="col-7 mb-2">
-            <Resume userInfo={userInfo} />
+            <Resume userInfo={userInfo} educationInfo={educationList} />
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-function Resume({ userInfo }) {
+function Resume({ userInfo, educationInfo }) {
   return (
     <div>
       <section className="pers-section">
@@ -24,18 +24,24 @@ function Resume({ userInfo }) {
       <div className="resume-bottom d-flex flex-column align-items-center">
         <section className="edu-section">
           <h3 className="resume-bottom-title">Education</h3>
-          <div className="d-flex flex-row resume-bottom-details">
-            <div className="me-4">
-              <p>08/2020 – present</p>
-              <p>New York City, US</p>
-            </div>
-            <div>
-              <p>
-                <strong>London City University</strong>
-              </p>
-              <p>Bachelors in Economics</p>
-            </div>
-          </div>
+          {educationInfo.map((ed) => {
+            return (
+              <div className="d-flex flex-row resume-bottom-details">
+                <div className="me-4">
+                  <p>
+                    {ed.startDate} – {ed.endDate}
+                  </p>
+                  <p>{ed.location}</p>
+                </div>
+                <div>
+                  <p>
+                    <strong>{ed.school}</strong>
+                  </p>
+                  <p>{ed.degree}</p>
+                </div>
+              </div>
+            );
+          })}
         </section>
         <section className="experience-section">
           <h3 className="resume-bottom-title">Professional Experience</h3>

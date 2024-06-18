@@ -57,7 +57,17 @@ body {
 }
 
 .experience-left {
-  width: 65%;
+  width: 30%;
+}
+.experience-right {
+  width: 70%;
+}
+
+.education-left {
+  width: 30%;
+}
+.education-right {
+  width: 70%;
 }
 
 .edu-section {

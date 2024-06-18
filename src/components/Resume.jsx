@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-function Resume({ userInfo, educationInfo }) {
+function Resume({ userInfo, educationInfo, experienceInfo }) {
   return (
     <div>
       <section className="pers-section">
@@ -27,13 +27,13 @@ function Resume({ userInfo, educationInfo }) {
           {educationInfo.map((ed) => {
             return (
               <div className="d-flex flex-row resume-bottom-details">
-                <div className="me-4">
+                <div className="me-4 education-left">
                   <p>
                     {ed.startDate} – {ed.endDate}
                   </p>
                   <p>{ed.location}</p>
                 </div>
-                <div>
+                <div className="education-right">
                   <p>
                     <strong>{ed.school}</strong>
                   </p>
@@ -45,42 +45,25 @@ function Resume({ userInfo, educationInfo }) {
         </section>
         <section className="experience-section">
           <h3 className="resume-bottom-title">Professional Experience</h3>
-          <div className="d-flex flex-row resume-bottom-details">
-            <div className="me-4 experience-left">
-              <p>08/2020 – present</p>
-              <p>New York City, US</p>
-            </div>
-            <div>
-              <p>
-                <strong>Umbrella Inc.</strong>
-              </p>
-              <p>UX & UI Designer</p>
-              <p className="lh-base">
-                Designed and prototyped user interface patterns for various
-                clients in various industries, ranging from self-service apps
-                within the telecommunications-sector to mobile games for IOS and
-                Android
-              </p>
-            </div>
-          </div>
-          <div className="d-flex flex-row resume-bottom-details">
-            <div className="me-4 experience-left">
-              <p>04/2018 – 02/2019</p>
-              <p>Berlin, Germany</p>
-            </div>
-            <div>
-              <p>
-                <strong>Black Mesa Labs</strong>
-              </p>
-              <p>UX Research Assistant</p>
-              <p className="lh-base">
-                Supported senior researchers on accessibility standards for the
-                open web. Created and usability tested wireframes and
-                prototypes. Produced interactive documentation for quick
-                onboarding of new researchers.
-              </p>
-            </div>
-          </div>
+          {experienceInfo.map((ex) => {
+            return (
+              <div className="d-flex flex-row resume-bottom-details">
+                <div className="me-4 experience-left">
+                  <p>
+                    {ex.startDate} – {ex.endDate}
+                  </p>
+                  <p>{ex.location}</p>
+                </div>
+                <div className="experience-right">
+                  <p>
+                    <strong>{ex.companyName}</strong>
+                  </p>
+                  <p>{ex.positionTitle}</p>
+                  <p className="lh-base">{ex.description}</p>
+                </div>
+              </div>
+            );
+          })}
         </section>
       </div>
     </div>

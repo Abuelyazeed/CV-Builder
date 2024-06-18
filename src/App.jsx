@@ -34,6 +34,29 @@ function App() {
     },
   ]);
 
+  const [experienceList, setExperienceList] = useState([
+    {
+      id: 1,
+      companyName: "Link Developments",
+      positionTitle: "Front-end Intern",
+      startDate: "21/5/2000",
+      endDate: "22/5/2000",
+      location: "Cairo",
+      description:
+        "Implemented a website adhering to web coding standards with a focus on performance, SEO, and accessibility.Applied responsive web design principles to ensure compatibility across variousdevices and screen sizes.Worked within an Agile framework using Microsoft Azure DevOps.",
+    },
+    {
+      id: 2,
+      companyName: "Egyproperty",
+      positionTitle: "Sales Intern",
+      startDate: "21/5/2000",
+      endDate: "22/5/2000",
+      location: "Cairo",
+      description:
+        "Implemented a website adhering to web coding standards with a focus on performance, SEO, and accessibility.Applied responsive web design principles to ensure compatibility across variousdevices and screen sizes.Worked within an Agile framework using Microsoft Azure DevOps.",
+    },
+  ]);
+
   return (
     <>
       <div className="container-fluid">
@@ -52,7 +75,11 @@ function App() {
             <Experience />
           </div>
           <div className="col-7 mb-2">
-            <Resume userInfo={userInfo} educationInfo={educationList} />
+            <Resume
+              userInfo={userInfo}
+              educationInfo={educationList}
+              experienceInfo={experienceList}
+            />
           </div>
         </div>
       </div>

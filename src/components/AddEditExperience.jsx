@@ -64,7 +64,7 @@ function AddEditExperience({
         <input
           type="text"
           className="form-control"
-          id="company"
+          id="companyName"
           placeholder="Enter company name"
           value={experienceInfo.companyName}
           onChange={handleChange}
@@ -77,7 +77,7 @@ function AddEditExperience({
         <input
           type="text"
           className="form-control"
-          id="position"
+          id="positionTitle"
           placeholder="Enter position title"
           value={experienceInfo.positionTitle}
           onChange={handleChange}

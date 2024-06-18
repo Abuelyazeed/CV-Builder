@@ -24,6 +24,7 @@ function App() {
       startDate: "2009",
       endDate: "2018",
       location: "Cairo",
+      isVisible: true,
     },
     {
       id: 2,
@@ -32,6 +33,7 @@ function App() {
       startDate: "2018",
       endDate: "2023",
       location: "Cairo",
+      isVisible: true,
     },
   ]);
 
@@ -45,6 +47,7 @@ function App() {
       location: "Cairo",
       description:
         "Implemented a website adhering to web coding standards with a focus on performance, SEO, and accessibility. Applied responsive web design principles to ensure compatibility across variousdevices and screen sizes. Worked within an Agile framework using Microsoft Azure DevOps.",
+      isVisible: true,
     },
     {
       id: 2,
@@ -55,6 +58,7 @@ function App() {
       location: "Cairo",
       description:
         "Cultivated strong interpersonal skills through client interactions and negotiation. Demonstrated resilience and adaptability in a challenging sales environment.",
+      isVisible: true,
     },
   ]);
 

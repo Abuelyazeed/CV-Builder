@@ -18,6 +18,18 @@ function Education({
     setSelectedEducationId(null);
     onChangeIsActive(true);
   }
+
+  function handleIsVisible(edId) {
+    onChangeEducationList(
+      educationList.map((ed) => {
+        if (ed.id === edId) {
+          return { ...ed, isVisible: !ed.isVisible };
+        } else {
+          return ed;
+        }
+      })
+    );
+  }
   const [selectedEducationId, setSelectedEducationId] = useState(null);
   return (
     <div className="accordion mb-4" id="accordionExample">
@@ -43,7 +55,7 @@ function Education({
               !isActive &&
               educationList.map((ed, index) => {
                 return (
-                  <>
+                  <React.Fragment key={ed.id}>
                     {index === 0 && <hr className="w-100 my-2" />}
                     <div
                       key={ed.id}
@@ -58,13 +70,20 @@ function Education({
                         >
                           Edit
                         </button>
-                        <button className="visible-btn">
-                          <i className="bi bi-eye"></i>
+                        <button
+                          className="visible-btn"
+                          onClick={() => handleIsVisible(ed.id)}
+                        >
+                          {ed.isVisible ? (
+                            <i className="bi bi-eye"></i>
+                          ) : (
+                            <i className="bi bi-eye-slash"></i>
+                          )}
                         </button>
                       </div>
                     </div>
                     <hr className="w-100 my-2" />
-                  </>
+                  </React.Fragment>
                 );
               })}
             {isActive && (

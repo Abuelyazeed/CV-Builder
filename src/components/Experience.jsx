@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import "../App.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import AddEditExperience from "./AddEditExperience";
@@ -9,6 +10,16 @@ function Experience({
   isActive,
   onChangeIsActive,
 }) {
+  function handleEdit(exId) {
+    setSelectedExperienceId(exId);
+    onChangeIsActive(true);
+  }
+
+  function handleAddNew() {
+    setSelectedExperienceId(null);
+    onChangeIsActive(true);
+  }
+  const [selectedExperienceId, setSelectedExperienceId] = useState(null);
   return (
     <div className="accordion" id="accordionExample">
       <div className="accordion-item">
@@ -45,7 +56,7 @@ function Experience({
                         <button
                           type="button"
                           className="btn btn-outline-secondary me-3"
-                          onClick={() => handleEdit(ed.id)}
+                          onClick={() => handleEdit(ex.id)}
                         >
                           Edit
                         </button>
@@ -58,11 +69,19 @@ function Experience({
                   </>
                 );
               })}
-            {isActive && <AddEditExperience />}
+            {isActive && (
+              <AddEditExperience
+                experienceList={experienceList}
+                onChangeExperienceList={onChangeExperienceList}
+                selectedExperienceId={selectedExperienceId}
+                onChangeIsActive={onChangeIsActive}
+              />
+            )}
             {!isActive && (
               <button
                 type="button"
                 className="btn btn-outline-primary mt-3 ed-btn"
+                onClick={handleAddNew}
               >
                 + Experience
               </button>

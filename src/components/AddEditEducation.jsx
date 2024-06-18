@@ -89,7 +89,7 @@ function AddEditEducation({
             Start Date
           </label>
           <input
-            type="date"
+            type="text"
             className="form-control"
             id="startDate"
             placeholder="Enter degree / field of study"
@@ -102,7 +102,7 @@ function AddEditEducation({
             End Date
           </label>
           <input
-            type="date"
+            type="text"
             className="form-control"
             id="endDate"
             placeholder="Enter degree / field of study"

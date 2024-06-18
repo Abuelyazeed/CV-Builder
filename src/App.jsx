@@ -20,16 +20,16 @@ function App() {
       id: 1,
       school: "Nefertari American International Schools",
       degree: "High School Degree",
-      startDate: "21/5/2000",
-      endDate: "22/5/2000",
+      startDate: "2009",
+      endDate: "2018",
       location: "Cairo",
     },
     {
       id: 2,
       school: "German University In Cairo",
       degree: "High School Degree",
-      startDate: "21/5/2000",
-      endDate: "22/5/2000",
+      startDate: "2018",
+      endDate: "2023",
       location: "Cairo",
     },
   ]);
@@ -39,21 +39,21 @@ function App() {
       id: 1,
       companyName: "Link Developments",
       positionTitle: "Front-end Intern",
-      startDate: "21/5/2000",
-      endDate: "22/5/2000",
+      startDate: "07/2022",
+      endDate: "08/2022",
       location: "Cairo",
       description:
-        "Implemented a website adhering to web coding standards with a focus on performance, SEO, and accessibility.Applied responsive web design principles to ensure compatibility across variousdevices and screen sizes.Worked within an Agile framework using Microsoft Azure DevOps.",
+        "Implemented a website adhering to web coding standards with a focus on performance, SEO, and accessibility. Applied responsive web design principles to ensure compatibility across variousdevices and screen sizes. Worked within an Agile framework using Microsoft Azure DevOps.",
     },
     {
       id: 2,
       companyName: "Egyproperty",
       positionTitle: "Sales Intern",
-      startDate: "21/5/2000",
-      endDate: "22/5/2000",
+      startDate: "07/2023",
+      endDate: "10/2023",
       location: "Cairo",
       description:
-        "Implemented a website adhering to web coding standards with a focus on performance, SEO, and accessibility.Applied responsive web design principles to ensure compatibility across variousdevices and screen sizes.Worked within an Agile framework using Microsoft Azure DevOps.",
+        "Cultivated strong interpersonal skills through client interactions and negotiation. Demonstrated resilience and adaptability in a challenging sales environment.",
     },
   ]);
 

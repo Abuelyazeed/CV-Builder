@@ -49,12 +49,21 @@ function Experience() {
                     {index === 0 && <hr className="w-100 my-2" />}
                     <div
                       key={index}
-                      className="d-flex flex-row justify-content-between m-2"
+                      className="d-flex flex-row justify-content-between align-items-center m-2"
                     >
                       {ex.companyName}
-                      <button className="visible-btn">
-                        <i className="bi bi-eye"></i>
-                      </button>
+                      <div className="d-flex">
+                        <button
+                          type="button"
+                          className="btn btn-outline-secondary me-3"
+                          onClick={() => handleEdit(ed.id)}
+                        >
+                          Edit
+                        </button>
+                        <button className="visible-btn">
+                          <i className="bi bi-eye"></i>
+                        </button>
+                      </div>
                     </div>
                     <hr className="w-100 my-2" />
                   </>

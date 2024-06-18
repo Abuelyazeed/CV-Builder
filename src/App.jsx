@@ -13,7 +13,8 @@ function App() {
     address: "Cairo, Egypt",
   });
 
-  const [isActive, setIsActive] = useState(false);
+  const [isActiveEducation, setIsActiveEducation] = useState(false);
+  const [isActiveExperience, setIsActiveExperience] = useState(false);
 
   const [educationList, setEducationList] = useState([
     {
@@ -27,7 +28,7 @@ function App() {
     {
       id: 2,
       school: "German University In Cairo",
-      degree: "High School Degree",
+      degree: "Bachelor in Computer Engineering",
       startDate: "2018",
       endDate: "2023",
       location: "Cairo",
@@ -69,10 +70,15 @@ function App() {
             <Education
               educationList={educationList}
               onChangeEducationList={setEducationList}
-              isActive={isActive}
-              onChangeIsActive={setIsActive}
+              isActive={isActiveEducation}
+              onChangeIsActive={setIsActiveEducation}
             />
-            <Experience />
+            <Experience
+              experienceList={experienceList}
+              onChangeExperienceList={setExperienceList}
+              isActive={isActiveExperience}
+              onChangeIsActive={setIsActiveExperience}
+            />
           </div>
           <div className="col-7 mb-2">
             <Resume

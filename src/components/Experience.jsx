@@ -1,26 +1,14 @@
 import React from "react";
 import "../App.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import AddEditExperience from "./AddEditExperience";
 
-function Experience() {
-  const experience = [
-    {
-      companyName: "Link Developments",
-      positionTitle: "Front-end Intern",
-      startDate: "21/5/2000",
-      endDate: "22/5/2000",
-      location: "Cairo",
-      description: "lorem ipsum ar arrrr",
-    },
-    {
-      companyName: "Egyproperty",
-      positionTitle: "Sales Intern",
-      startDate: "21/5/2000",
-      endDate: "22/5/2000",
-      location: "Cairo",
-      description: "lorem ipsum ar arrrr",
-    },
-  ];
+function Experience({
+  experienceList,
+  onChangeExperienceList,
+  isActive,
+  onChangeIsActive,
+}) {
   return (
     <div className="accordion" id="accordionExample">
       <div className="accordion-item">
@@ -42,8 +30,9 @@ function Experience() {
           data-bs-parent="#accordionExample"
         >
           <div className="accordion-body d-flex flex-column">
-            {experience.length > 0 &&
-              experience.map((ex, index) => {
+            {experienceList.length > 0 &&
+              !isActive &&
+              experienceList.map((ex, index) => {
                 return (
                   <>
                     {index === 0 && <hr className="w-100 my-2" />}
@@ -69,12 +58,15 @@ function Experience() {
                   </>
                 );
               })}
-            <button
-              type="button"
-              className="btn btn-outline-primary mt-3 ed-btn"
-            >
-              + Experience
-            </button>
+            {isActive && <AddEditExperience />}
+            {!isActive && (
+              <button
+                type="button"
+                className="btn btn-outline-primary mt-3 ed-btn"
+              >
+                + Experience
+              </button>
+            )}
           </div>
         </div>
       </div>

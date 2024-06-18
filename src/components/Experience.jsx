@@ -19,6 +19,18 @@ function Experience({
     setSelectedExperienceId(null);
     onChangeIsActive(true);
   }
+
+  function handleIsVisible(exId) {
+    onChangeExperienceList(
+      experienceList.map((ex) => {
+        if (ex.id === exId) {
+          return { ...ex, isVisible: !ex.isVisible };
+        } else {
+          return ex;
+        }
+      })
+    );
+  }
   const [selectedExperienceId, setSelectedExperienceId] = useState(null);
   return (
     <div className="accordion" id="accordionExample">
@@ -45,7 +57,7 @@ function Experience({
               !isActive &&
               experienceList.map((ex, index) => {
                 return (
-                  <>
+                  <React.Fragment key={ex.id}>
                     {index === 0 && <hr className="w-100 my-2" />}
                     <div
                       key={index}
@@ -60,13 +72,20 @@ function Experience({
                         >
                           Edit
                         </button>
-                        <button className="visible-btn">
-                          <i className="bi bi-eye"></i>
+                        <button
+                          className="visible-btn"
+                          onClick={() => handleIsVisible(ex.id)}
+                        >
+                          {ex.isVisible ? (
+                            <i className="bi bi-eye"></i>
+                          ) : (
+                            <i className="bi bi-eye-slash"></i>
+                          )}
                         </button>
                       </div>
                     </div>
                     <hr className="w-100 my-2" />
-                  </>
+                  </React.Fragment>
                 );
               })}
             {isActive && (

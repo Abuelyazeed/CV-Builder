@@ -33,7 +33,7 @@ function Experience({
   }
   const [selectedExperienceId, setSelectedExperienceId] = useState(null);
   return (
-    <div className="accordion" id="accordionExample">
+    <div className="accordion experience" id="accordionExample">
       <div className="accordion-item">
         <h2 className="accordion-header">
           <button

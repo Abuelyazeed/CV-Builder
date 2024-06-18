@@ -32,7 +32,7 @@ function Education({
   }
   const [selectedEducationId, setSelectedEducationId] = useState(null);
   return (
-    <div className="accordion mb-4" id="accordionExample">
+    <div className="accordion mb-4 education" id="accordionExample">
       <div className="accordion-item">
         <h2 className="accordion-header">
           <button

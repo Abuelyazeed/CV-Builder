@@ -6,7 +6,7 @@ function Resume({ userInfo, educationInfo, experienceInfo }) {
     <div>
       <section className="pers-section">
         <h1 className="mb-3">{userInfo.fullName}</h1>
-        <div className="d-flex flex-row justify-content-evenly">
+        <div className="d-flex flex-row justify-content-center gap-5">
           <p>
             <i className="bi bi-envelope me-2"></i>
             {userInfo.email}

@@ -64,33 +64,28 @@ function App() {
 
   return (
     <>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-5">
-            <PersonalDetails
-              userInfo={userInfo}
-              onChangeUserInfo={setUserInfo}
-            />
-            <Education
-              educationList={educationList}
-              onChangeEducationList={setEducationList}
-              isActive={isActiveEducation}
-              onChangeIsActive={setIsActiveEducation}
-            />
-            <Experience
-              experienceList={experienceList}
-              onChangeExperienceList={setExperienceList}
-              isActive={isActiveExperience}
-              onChangeIsActive={setIsActiveExperience}
-            />
-          </div>
-          <div className="col-7 mb-2">
-            <Resume
-              userInfo={userInfo}
-              educationInfo={educationList}
-              experienceInfo={experienceList}
-            />
-          </div>
+      <div className="container-fluid d-flex gap-4">
+        <div className="col-5">
+          <PersonalDetails userInfo={userInfo} onChangeUserInfo={setUserInfo} />
+          <Education
+            educationList={educationList}
+            onChangeEducationList={setEducationList}
+            isActive={isActiveEducation}
+            onChangeIsActive={setIsActiveEducation}
+          />
+          <Experience
+            experienceList={experienceList}
+            onChangeExperienceList={setExperienceList}
+            isActive={isActiveExperience}
+            onChangeIsActive={setIsActiveExperience}
+          />
+        </div>
+        <div className="col-7 resume p-0">
+          <Resume
+            userInfo={userInfo}
+            educationInfo={educationList}
+            experienceInfo={experienceList}
+          />
         </div>
       </div>
     </>

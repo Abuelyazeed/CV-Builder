@@ -6,7 +6,7 @@ function PersonalDetails({ userInfo, onChangeUserInfo }) {
     onChangeUserInfo({ ...userInfo, [id]: value });
   }
   return (
-    <div className="accordion mb-4" id="accordionExample">
+    <div className="accordion mb-4 personal" id="accordionExample">
       <div className="accordion-item">
         <h2 className="accordion-header">
           <button

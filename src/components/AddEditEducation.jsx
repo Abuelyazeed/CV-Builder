@@ -1,10 +1,11 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-function AddEducation({
+function AddEditEducation({
   educationList,
   onChangeEducationList,
+  selectedEducationId,
   onChangeIsActive,
 }) {
   const [educationInfo, setEducationInfo] = useState({
@@ -15,18 +16,45 @@ function AddEducation({
     location: "",
   });
 
+  useEffect(() => {
+    if (selectedEducationId !== null) {
+      const selectedEducation = educationList.find(
+        (ed) => ed.id === selectedEducationId
+      );
+      if (selectedEducation) {
+        setEducationInfo(selectedEducation);
+      }
+    }
+  }, [selectedEducationId, educationList]);
+
   function handleChange(e) {
     const { id, value } = e.target;
     setEducationInfo({ ...educationInfo, [id]: value });
   }
+
   function handleAdd() {
-    onChangeEducationList([...educationList, educationInfo]);
+    if (selectedEducationId) {
+      const updatedList = educationList.map((ed) =>
+        ed.id === selectedEducationId ? { ...ed, ...educationInfo } : ed
+      );
+      onChangeEducationList(updatedList);
+    } else {
+      const newEducation = { ...educationInfo, id: Date.now() };
+      onChangeEducationList([...educationList, newEducation]);
+    }
+
     onChangeIsActive(false);
   }
 
   function handleDelete() {
+    if (selectedEducationId !== null) {
+      onChangeEducationList(
+        educationList.filter((ed) => ed.id !== selectedEducationId)
+      );
+    }
     onChangeIsActive(false);
   }
+
   return (
     <div>
       <div className="mb-3">
@@ -97,7 +125,11 @@ function AddEducation({
         />
       </div>
       <div className="d-flex flex-row justify-content-between">
-        <button type="button" className="btn btn-outline-danger mt-3">
+        <button
+          type="button"
+          className="btn btn-outline-danger mt-3"
+          onClick={handleDelete}
+        >
           <i className="bi bi-trash3 me-2"></i>
           Delete
         </button>
@@ -122,4 +154,4 @@ function AddEducation({
   );
 }
 
-export default AddEducation;
+export default AddEditEducation;

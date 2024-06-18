@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../App.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import AddEducation from "./AddEducation";
+import AddEditEducation from "./AddEditEducation";
 
 function Education({
   educationList,
@@ -9,6 +9,16 @@ function Education({
   isActive,
   onChangeIsActive,
 }) {
+  function handleEdit(edId) {
+    setSelectedEducationId(edId);
+    onChangeIsActive(true);
+  }
+
+  function handleAddNew() {
+    setSelectedEducationId(null);
+    onChangeIsActive(true);
+  }
+  const [selectedEducationId, setSelectedEducationId] = useState(null);
   return (
     <div className="accordion mb-4" id="accordionExample">
       <div className="accordion-item">
@@ -36,34 +46,44 @@ function Education({
                   <>
                     {index === 0 && <hr className="w-100 my-2" />}
                     <div
-                      key={index}
-                      className="d-flex flex-row justify-content-between m-2 ed"
-                      onClick={() => onChangeIsActive(true)}
+                      key={ed.id}
+                      className="d-flex flex-row justify-content-between align-items-center m-2 ed"
                     >
                       {ed.school}
-                      <button className="visible-btn">
-                        <i className="bi bi-eye"></i>
-                      </button>
+                      <div className="d-flex">
+                        <button
+                          type="button"
+                          className="btn btn-outline-secondary me-3"
+                          onClick={() => handleEdit(ed.id)}
+                        >
+                          Edit
+                        </button>
+                        <button className="visible-btn">
+                          <i className="bi bi-eye"></i>
+                        </button>
+                      </div>
                     </div>
                     <hr className="w-100 my-2" />
                   </>
                 );
               })}
             {isActive && (
-              <AddEducation
+              <AddEditEducation
                 educationList={educationList}
                 onChangeEducationList={onChangeEducationList}
+                selectedEducationId={selectedEducationId}
                 onChangeIsActive={onChangeIsActive}
               />
             )}
-
-            <button
-              type="button"
-              className="btn btn-outline-primary mt-3 ed-btn"
-              onClick={() => onChangeIsActive(true)}
-            >
-              + Education
-            </button>
+            {!isActive && (
+              <button
+                type="button"
+                className="btn btn-outline-primary mt-3 ed-btn"
+                onClick={handleAddNew}
+              >
+                + Education
+              </button>
+            )}
           </div>
         </div>
       </div>

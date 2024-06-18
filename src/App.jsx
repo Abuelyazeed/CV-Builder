@@ -17,6 +17,7 @@ function App() {
 
   const [educationList, setEducationList] = useState([
     {
+      id: 1,
       school: "Nefertari American Internation Schools",
       degree: "High School Degree",
       startDate: "21/5/2000",
@@ -24,6 +25,7 @@ function App() {
       location: "Cairo",
     },
     {
+      id: 2,
       school: "German University In Cairo",
       degree: "High School Degree",
       startDate: "21/5/2000",
